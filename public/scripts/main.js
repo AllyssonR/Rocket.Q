@@ -20,6 +20,6 @@ deleteButton.forEach((button) => {
 function handleClick(event, check = true) {
   const text = check ? "marcar como lida" : "Excluir ";
   modalTitle.innerHTML = `${text}   essa pergunta ?`;
-  modalDescription.innerHTML = `Tem certeza que deseja ${text} esta pergunta ?`;
+  modalDescription.innerHTML = `Tem certeza que deseja ${text.toLowerCase()} esta pergunta ?`;
   modal.open();
 }
