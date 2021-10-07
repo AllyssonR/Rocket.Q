@@ -9,10 +9,10 @@ route.get("/", (require, response) => {
 route.get("/create-pass", (require, response) => {
   response.render("index", { page: "create-pass" });
 });
-route.get("/room/", (require, response) => {
+route.get("/room/:room", (require, response) => {
   response.render("room");
 });
-route.post("/room/:room/:question/:action", QuestionController.index);
-route.post("/room/create-room", RoomController.create);
+route.post("/question/:room/:question/:action", QuestionController.index);
+route.post("/create-room", RoomController.create);
 
 module.exports = route;

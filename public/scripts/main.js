@@ -24,15 +24,14 @@ function handleClick(event, check = true) {
   const roomId = document.querySelector("#room-id").dataset.id;
   const quiestionId = event.target.dataset.id;
   const form = document.querySelector(".modal form");
-  form.setAttribute("action",`/room/${roomId}/${quiestionId}/${slug}`);
+  form.setAttribute("action", `/question/${roomId}/${quiestionId}/${slug}`);
 
-  /*forma que o modal vai se apresentar*/ 
+  /*forma que o modal vai se apresentar*/
   modalTitle.innerHTML = `${text}   essa pergunta ?`;
   modalDescription.innerHTML = `Tem certeza que deseja ${text.toLowerCase()} esta pergunta ?`;
   modalButton.innerHTML = `Sim,${text.toLocaleLowerCase()} `;
   check
     ? modalButton.classList.remove("red")
     : modalButton.classList.add("red");
-
   modal.open();
 }
